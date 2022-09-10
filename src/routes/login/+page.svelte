@@ -1,7 +1,7 @@
 <script lang="ts">
-	import FacebookIcon from '../../icons/facebook.svelte'
-	import GoogleIcon from '../../icons/google.svelte'
-	import TwitterIcon from '../../icons/twitter.svelte'
+	import FacebookIcon from '$icons/facebook.svelte'
+	import GoogleIcon from '$icons/google.svelte'
+	import TwitterIcon from '$icons/twitter.svelte'
 </script>
 
 <main>
