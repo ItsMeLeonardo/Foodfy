@@ -13,7 +13,7 @@
 				<a href="/register">NO ACCOUNT YET?</a>
 			</header>
 			<form on:submit|preventDefault>
-				<input type="text" name="email" placeholder="email@example.com" />
+				<input type="email" name="email" placeholder="email@example.com" />
 				<input type="password" name="email" placeholder="your password" />
 				<button>Log in</button>
 			</form>
