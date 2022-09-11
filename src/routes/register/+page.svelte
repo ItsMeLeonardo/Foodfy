@@ -2,6 +2,8 @@
 	import FacebookIcon from '$icons/facebook.svelte'
 	import GoogleIcon from '$icons/google.svelte'
 	import TwitterIcon from '$icons/twitter.svelte'
+
+	import Input from '$components/general/Input.svelte'
 </script>
 
 <main>
@@ -10,12 +12,13 @@
 		<article class="form-container">
 			<header>
 				<h1 class="title">Sign up</h1>
-				<a href="/login"> HAVE AN ACCOUNT?</a>
+				<a href="/login">HAVE AN ACCOUNT?</a>
 			</header>
 			<form on:submit|preventDefault>
-				<input type="text" name="username" placeholder="username" />
-				<input type="email" name="email" placeholder="email@example.com" />
-				<input type="password" name="email" placeholder="your password" />
+				<Input type="text" name="username" placeholder="username" />
+				<!-- <input type="text" name="username" placeholder="username" /> -->
+				<Input type="email" name="email" placeholder="email@example.com" />
+				<Input type="password" name="email" placeholder="your password" />
 				<button>Sign up</button>
 			</form>
 			<small>Or Sign up with</small>
@@ -84,15 +87,6 @@
 			flex-direction: column;
 			gap: 12px;
 			margin-top: 1.5rem;
-
-			input {
-				padding: 12px;
-				border-radius: 4px;
-				font-size: 12px;
-				border: none;
-				color: var(--grey-900);
-				width: 100%;
-			}
 
 			button {
 				padding: 10px;
