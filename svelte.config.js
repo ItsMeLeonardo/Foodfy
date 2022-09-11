@@ -18,6 +18,7 @@ const config = {
 		alias: {
 			'$components/*': resolve('./src/components/*'),
 			'$lib/*': resolve('./src/lib/*'),
+			'$ui-helpers/*': resolve('./src/lib/ui-helpers/*'),
 			'$icons/*': resolve('./src/icons/*')
 		}
 	}
