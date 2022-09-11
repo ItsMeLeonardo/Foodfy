@@ -6,7 +6,7 @@
 	export let placeholder: string = ''
 	export let type: InputType = 'text'
 	export let name: string = ''
-	export let id: string = ''
+	export let id: string | null = null
 </script>
 
 <label>
