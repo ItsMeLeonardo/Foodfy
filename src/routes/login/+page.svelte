@@ -4,6 +4,7 @@
 	import TwitterIcon from '$icons/twitter.svelte'
 
 	import Input from '$components/general/Input.svelte'
+	import Button from '$components/general/Button.svelte'
 </script>
 
 <main>
@@ -17,22 +18,22 @@
 			<form on:submit|preventDefault>
 				<Input type="email" name="email" placeholder="email@example.com" />
 				<Input type="password" name="email" placeholder="your password" />
-				<button>Log in</button>
+				<Button>Log in</Button>
 			</form>
 			<small>Or log in with</small>
 			<div class="login-options">
-				<button>
+				<Button color="light" position="left">
 					<GoogleIcon h={20} w={20} />
 					<span>Login with Google</span>
-				</button>
-				<button>
+				</Button>
+				<Button color="light" position="left">
 					<FacebookIcon h={20} w={20} />
 					<span>Login with Facebook</span>
-				</button>
-				<button>
+				</Button>
+				<Button color="light" position="left">
 					<TwitterIcon h={20} w={20} />
 					<span>Login with Twitter</span>
-				</button>
+				</Button>
 			</div>
 		</article>
 	</section>
@@ -85,15 +86,6 @@
 			flex-direction: column;
 			gap: 12px;
 			margin-top: 1.5rem;
-			button {
-				padding: 10px;
-				border-radius: 4px;
-				font-size: 12px;
-				border: none;
-				width: 100%;
-				background: var(--primary);
-				color: var(--white);
-			}
 		}
 
 		small {
@@ -108,24 +100,5 @@
 		display: grid;
 		gap: 12px;
 		width: 100%;
-
-		button {
-			padding: 10px;
-			border-radius: 4px;
-			font-size: 12px;
-			border: none;
-			width: 100%;
-			background: var(--white);
-			color: var(--black);
-			text-align: left;
-			display: flex;
-			align-items: center;
-			gap: 6px;
-			box-shadow: 0 0 0 1px var(--grey-200);
-			transition: box-shadow 0.4s ease-in-out;
-			&:hover {
-				box-shadow: 0 0 3rem -1rem var(--grey-300);
-			}
-		}
 	}
 </style>
