@@ -5,7 +5,7 @@
 	export let label: string
 	export let canSearch: boolean = false
 
-	export let clickeable: boolean = false
+	export let clickable: boolean = false
 </script>
 
 {#if canSearch}
@@ -16,7 +16,7 @@
 		</span>
 	</a>
 {:else}
-	<div class="tag" class:clickeable on:click>
+	<div class="tag" class:clickable tabindex={clickable ? 0 : -1} on:click>
 		<span class="text">{label}</span>
 		<span class="options">
 			<slot name="icon"><!-- optional fallback --></slot>
