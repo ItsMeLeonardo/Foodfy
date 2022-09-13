@@ -8,6 +8,7 @@
 	export let flat: boolean = false
 	export let auto: boolean = false
 	export let label: string = ''
+	export let fullRound: boolean = false
 
 	const classes = {
 		'button--disabled': disabled,
@@ -19,12 +20,14 @@
 		'button--danger': color === 'danger',
 		'button--light': color === 'light',
 		'button--flat': flat,
-		'button--auto': auto
+		'button--auto': auto,
+		'button--full-round': fullRound
 	}
 </script>
 
 <button {type} {disabled} class:disabled class={classMap(classes)}>
 	<slot>{label}</slot>
+	<slot name="icon"><!-- optional fallback --></slot>
 </button>
 
 <style lang="postcss">
@@ -74,6 +77,10 @@
 			background: var(--white);
 			color: var(--black);
 			box-shadow: 0 0 0 1px var(--grey-200);
+		}
+
+		&--full-round {
+			border-radius: 999px;
 		}
 	}
 </style>
