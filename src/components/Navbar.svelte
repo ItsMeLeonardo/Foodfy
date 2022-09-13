@@ -1,18 +1,29 @@
 <script lang="ts">
+	import Logo from '$components/general/Logo.svelte'
+	import Button from '$components/general/Button.svelte'
+
 	import Search from '$icons/Search.svelte'
+	import ReportSearch from '$icons/ReportSearch.svelte'
 </script>
 
 <nav>
-	<a href="/">
-		<h3 class="logo">FOODFY</h3>
+	<a href="/" class="logo">
+		<Logo />
 	</a>
 
-	<label>
-		<span class="icon">
-			<Search />
-		</span>
-		<input type="search" placeholder="Search anything" />
-	</label>
+	<div class="search-container">
+		<label>
+			<span class="icon">
+				<Search />
+			</span>
+			<input type="search" placeholder="Search any food by name" />
+		</label>
+		<a href="/" title="Search by ingredient" class="ingredient-search">
+			<Button color="light" fullRound>
+				<ReportSearch slot="icon" />
+			</Button>
+		</a>
+	</div>
 
 	<picture>
 		<img
@@ -32,7 +43,7 @@
 		padding: 0 0.5rem;
 	}
 
-	a {
+	.logo {
 		text-decoration: none;
 		color: var(--primary);
 		display: none;
@@ -40,19 +51,19 @@
 		@media (min-width: 768px) {
 			display: block;
 		}
-
-		.logo {
-			font-size: 1.25rem;
-			font-weight: 700;
-			text-align: center;
-			max-width: 1ch;
-		}
 	}
 
-	label {
-		position: relative;
+	.search-container {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
 		width: 80%;
 		max-width: 400px;
+	}
+	label {
+		flex-grow: 1;
+		position: relative;
+		width: 80%;
 
 		.icon {
 			display: flex;
