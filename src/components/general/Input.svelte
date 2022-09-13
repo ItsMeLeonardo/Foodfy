@@ -1,5 +1,5 @@
 <script lang="ts">
-	type InputType = 'text' | 'email' | 'password' | 'number' | 'tel' | 'url'
+	type InputType = 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search'
 
 	export let helperText: string | null = null
 	export let hasError: boolean = false
@@ -11,6 +11,9 @@
 
 <label>
 	<input {type} {name} {placeholder} {id} />
+	<span class="icon-right">
+		<slot name="icon-right" />
+	</span>
 	{#if helperText}
 		<span class="helper-text" class:error={hasError}>{helperText}</span>
 	{/if}
@@ -19,6 +22,15 @@
 <style lang="postcss">
 	label {
 		position: relative;
+	}
+
+	.icon-right {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		right: 0.5rem;
+		transform: translateY(-50%);
+		color: var(--primary);
 	}
 
 	.helper-text {
