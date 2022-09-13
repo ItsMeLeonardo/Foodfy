@@ -25,7 +25,7 @@
 {/if}
 
 <style lang="postcss">
-	.clickeable {
+	.clickable {
 		cursor: pointer;
 	}
 	.tag {
