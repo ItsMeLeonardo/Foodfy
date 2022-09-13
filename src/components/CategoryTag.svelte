@@ -31,9 +31,11 @@
 	.tag {
 		color: var(--white);
 		font-size: 10px;
+		font-weight: bold;
 		padding: 0.25rem 0.75rem 0.25rem 0.25rem;
 		border-radius: 0.25rem 1rem 1rem 0.25rem;
-		background-color: var(--primary);
+		background: var(--primary-light);
+		color: var(--primary);
 		max-width: 100px;
 		display: inline-flex;
 		align-items: center;
@@ -49,14 +51,20 @@
 		}
 
 		.options {
+			height: 100%;
+			background: linear-gradient(90deg, transparent, var(--primary));
+			width: 70%;
+			display: flex;
+			border-radius: 0 100px 100px 0;
+			align-items: center;
+			justify-content: flex-end;
+			right: 0;
+			top: 0;
+			padding-right: 0.5rem;
 			position: absolute;
-			right: 0.25rem;
-			top: 50%;
-			transform: translateY(-50%);
-			background: var(--primary);
+			color: var(--white);
 			transition: opacity 0.25s ease-in-out;
 			opacity: 0;
-			display: flex;
 		}
 
 		&:hover .options,
