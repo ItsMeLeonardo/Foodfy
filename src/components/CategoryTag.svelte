@@ -1,8 +1,7 @@
 <script lang="ts">
 	import Search from '$icons/Search.svelte'
 
-	// export let category: string
-	export let label: string
+	export let label: string = ''
 	export let canSearch: boolean = false
 
 	export let clickable: boolean = false
@@ -34,8 +33,10 @@
 		font-weight: bold;
 		padding: 0.25rem 0.75rem 0.25rem 0.25rem;
 		border-radius: 0.25rem 1rem 1rem 0.25rem;
-		background: var(--primary-light);
-		color: var(--primary);
+		background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+		color: var(--white);
+		/* background: var(--primary-light);
+		color: var(--primary); */
 		max-width: 100px;
 		display: inline-flex;
 		align-items: center;
@@ -52,8 +53,8 @@
 
 		.options {
 			height: 100%;
-			background: linear-gradient(90deg, transparent, var(--primary));
-			width: 70%;
+			background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+			width: 35%;
 			display: flex;
 			border-radius: 0 100px 100px 0;
 			align-items: center;
