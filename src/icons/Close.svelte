@@ -1,6 +1,9 @@
 <script lang="ts">
 	export let w = 20
 	export let h = 20
+	export let weight: 'light' | 'bold' = 'light'
+
+	const strokeWidth = weight === 'light' ? 1.5 : 4
 </script>
 
 <svg
@@ -9,7 +12,7 @@
 	width={w}
 	height={h}
 	viewBox="0 0 24 24"
-	stroke-width="1.5"
+	stroke-width={strokeWidth}
 	stroke="currentColor"
 	fill="none"
 	stroke-linecap="round"
