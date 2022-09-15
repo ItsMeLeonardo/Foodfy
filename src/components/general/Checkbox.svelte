@@ -10,6 +10,8 @@
 	export let value: string | object = ''
 	export let group: any[] = []
 
+	export let block: boolean = false // if true, the checkbox will be displayed as a block element
+
 	const existThisValue = group.some((item) => {
 		return JSON.stringify(item) == JSON.stringify(value)
 	})
@@ -43,7 +45,7 @@
 	})
 </script>
 
-<label class="checkbox-container" tabindex="0">
+<label class="checkbox-container" tabindex="0" class:block>
 	<input type="checkbox" {name} hidden bind:checked on:input={onInput} />
 	<div class="icon-container" class:checked>
 		{#if checked}
@@ -60,6 +62,9 @@
 </label>
 
 <style lang="postcss">
+	.block {
+		width: 100% !important;
+	}
 	.checkbox-container {
 		width: max-content;
 		display: flex;
