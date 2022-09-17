@@ -23,10 +23,13 @@
 		return { label: option, value: option, isSelected: value === option } as Option
 	})
 
+	let optionsToShow = optionsFormated
+
 	let open = false
 	let inputValue: string = ''
 
 	$: {
+		// set the value of the options selected
 		if (multiple) {
 			const selected = optionsFormated.filter((option) => option.isSelected)
 			if (typeof options[0] === 'string') {
@@ -41,6 +44,15 @@
 			} else if (selected) {
 				value = selected
 			}
+		}
+	}
+
+	$: {
+		// filter options
+		if (filter) {
+			optionsToShow = optionsFormated.filter((option) =>
+				option.label.toLowerCase().includes(inputValue.toLowerCase())
+			)
 		}
 	}
 
@@ -105,7 +117,7 @@
 
 	{#if open}
 		<ul class="results" transition:fade>
-			{#each optionsFormated as option}
+			{#each optionsToShow as option}
 				<li class:multiple>
 					{#if multiple}
 						<Checkbox block bind:checked={option.isSelected}>{option.label}</Checkbox>
