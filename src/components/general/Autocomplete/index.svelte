@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition'
+
 	import Close from '$icons/Close.svelte'
+	import ChevronDown from '$icons/ChevronDown.svelte'
 	import Checkbox from '$components/general/Checkbox.svelte'
 
 	import type { Option } from '$components/general/Autocomplete/types'
@@ -20,7 +23,7 @@
 		return { label: option, value: option, isSelected: value === option } as Option
 	})
 
-	let open = true
+	let open = false
 	let inputValue: string = ''
 
 	$: {
@@ -57,9 +60,25 @@
 		})
 		inputValue = ''
 	}
+
+	function openOptions() {
+		open = true
+	}
+
+	function closeOptions() {
+		open = false
+	}
+
+	function onChevronClick(event: Event) {
+		if (!open) openOptions()
+		else {
+			event.stopPropagation()
+			closeOptions()
+		}
+	}
 </script>
 
-<div class="container">
+<div class="container" on:click={openOptions}>
 	{#if multiple && Array.isArray(value)}
 		<div class="selected">
 			{#each optionsFormated.filter((i) => i.isSelected) as item}
@@ -80,8 +99,12 @@
 		</label>
 	{/if}
 
+	<span class="open-icon" class:open on:click={onChevronClick}>
+		<ChevronDown />
+	</span>
+
 	{#if open}
-		<ul class="results">
+		<ul class="results" transition:fade>
 			{#each optionsFormated as option}
 				<li class:multiple>
 					{#if multiple}
@@ -113,6 +136,23 @@
 		flex-wrap: wrap;
 		gap: 0.5rem;
 		align-items: center;
+		cursor: pointer;
+
+		.open-icon {
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0 0.5rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: transform 0.2s ease-in-out;
+
+			&.open {
+				transform: rotate(180deg);
+			}
+		}
 	}
 
 	.selected {
