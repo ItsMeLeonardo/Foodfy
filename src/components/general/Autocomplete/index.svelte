@@ -212,6 +212,7 @@
 
 	label {
 		width: 100%;
+		flex-grow: 1;
 		&.multiple {
 			width: auto;
 		}
