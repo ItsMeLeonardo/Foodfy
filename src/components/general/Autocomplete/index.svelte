@@ -48,10 +48,10 @@
 	}
 
 	$: {
-		// filter options
 		if (filter) {
+			const keyword = inputValue.toLowerCase()
 			optionsToShow = optionsFormated.filter((option) =>
-				option.label.toLowerCase().includes(inputValue.toLowerCase())
+				option.label.toLowerCase().includes(keyword)
 			)
 		}
 	}
@@ -62,7 +62,9 @@
 			if (opt.isSelected) opt.isSelected = false
 			return { ...opt, isSelected: true }
 		})
+
 		inputValue = option.label
+		closeOptions()
 	}
 
 	function removeOption(option: Option) {
@@ -74,6 +76,7 @@
 	}
 
 	function openOptions() {
+		inputValue = ''
 		open = true
 	}
 
@@ -124,11 +127,15 @@
 					{:else}
 						<button
 							class:selected={inputValue === option.label}
-							on:click={() => selecteSingleOption(option)}
+							on:click|stopPropagation={() => selecteSingleOption(option)}
 						>
 							{option.label}
 						</button>
 					{/if}
+				</li>
+			{:else}
+				<li class="no-results">
+					<span>No results</span>
 				</li>
 			{/each}
 		</ul>
@@ -238,9 +245,12 @@
 		li {
 			border-radius: 4px;
 			transition: background 0.2s ease-in-out, transform 0.3s ease-in-out;
-
-			&.multiple {
+			&.multiple,
+			&.no-results {
 				padding: 0.5rem;
+			}
+			&.no-results {
+				pointer-events: none;
 			}
 
 			button {
