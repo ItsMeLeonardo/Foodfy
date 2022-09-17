@@ -20,6 +20,7 @@
 		return { label: option, value: option, isSelected: value === option } as Option
 	})
 
+	let open = true
 	let inputValue: string = ''
 
 	$: {
@@ -72,26 +73,31 @@
 			{/each}
 		</div>
 	{/if}
-	<label class:multiple>
-		<input type="text" {placeholder} bind:value={inputValue} disabled={!filter} />
-	</label>
 
-	<ul class="results">
-		{#each optionsFormated as option}
-			<li class:multiple>
-				{#if multiple}
-					<Checkbox block bind:checked={option.isSelected}>{option.label}</Checkbox>
-				{:else}
-					<button
-						class:selected={inputValue === option.label}
-						on:click={() => selecteSingleOption(option)}
-					>
-						{option.label}
-					</button>
-				{/if}
-			</li>
-		{/each}
-	</ul>
+	{#if filter || (multiple && Array.isArray(value) && value.length === 0)}
+		<label class:multiple>
+			<input type="text" {placeholder} bind:value={inputValue} disabled={!filter} />
+		</label>
+	{/if}
+
+	{#if open}
+		<ul class="results">
+			{#each optionsFormated as option}
+				<li class:multiple>
+					{#if multiple}
+						<Checkbox block bind:checked={option.isSelected}>{option.label}</Checkbox>
+					{:else}
+						<button
+							class:selected={inputValue === option.label}
+							on:click={() => selecteSingleOption(option)}
+						>
+							{option.label}
+						</button>
+					{/if}
+				</li>
+			{/each}
+		</ul>
+	{/if}
 </div>
 
 <style lang="postcss">
@@ -175,6 +181,7 @@
 		flex-direction: column;
 		height: min-content;
 		max-height: 200px;
+		overflow-y: auto;
 
 		li {
 			border-radius: 4px;
