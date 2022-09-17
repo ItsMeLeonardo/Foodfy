@@ -93,7 +93,9 @@
 	}
 </script>
 
-<div class="container" on:click={openOptions}>
+<svelte:window on:click={closeOptions} />
+
+<div class="container" on:click|stopPropagation={openOptions}>
 	{#if multiple && Array.isArray(value)}
 		<div class="selected">
 			{#each optionsFormated.filter((i) => i.isSelected) as item}
