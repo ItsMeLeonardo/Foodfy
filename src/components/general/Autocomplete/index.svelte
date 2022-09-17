@@ -15,15 +15,14 @@
 
 	export let value: string | Option | string[] | Option[] = ''
 
-	let optionsFormated = options.map((option) => {
+	let optionsFormatted = options.map((option) => {
+		const show = true
 		if (typeof option !== 'string') {
-			return option as Option
+			return { ...option, show } as Option
 		}
 
-		return { label: option, value: option, isSelected: value === option } as Option
+		return { label: option, value: option, isSelected: value === option, show }
 	})
-
-	let optionsToShow = optionsFormated
 
 	let open = false
 	let inputValue: string = ''
@@ -31,14 +30,14 @@
 	$: {
 		// set the value of the options selected
 		if (multiple) {
-			const selected = optionsFormated.filter((option) => option.isSelected)
+			const selected = optionsFormatted.filter((option) => option.isSelected)
 			if (typeof options[0] === 'string') {
 				value = selected.map((option) => option.value)
 			} else {
 				value = selected
 			}
 		} else {
-			const selected = optionsFormated.find((option) => option.isSelected)
+			const selected = optionsFormatted.find((option) => option.isSelected)
 			if (typeof options[0] === 'string') {
 				value = selected?.value
 			} else if (selected) {
@@ -50,15 +49,16 @@
 	$: {
 		if (filter) {
 			const keyword = inputValue.toLowerCase()
-			optionsToShow = optionsFormated.filter((option) =>
-				option.label.toLowerCase().includes(keyword)
-			)
+			optionsFormatted = optionsFormatted.map((option) => {
+				const show = option.label.toLowerCase().includes(keyword)
+				return { ...option, show }
+			})
 		}
 	}
 
 	function selecteSingleOption(option: Option) {
 		if (multiple) return
-		optionsFormated = optionsFormated.map((opt) => {
+		optionsFormatted = optionsFormatted.map((opt) => {
 			if (opt.isSelected) opt.isSelected = false
 			return { ...opt, isSelected: true }
 		})
@@ -68,7 +68,7 @@
 	}
 
 	function removeOption(option: Option) {
-		optionsFormated = optionsFormated.map((opt) => {
+		optionsFormatted = optionsFormatted.map((opt) => {
 			if (option.label === opt.label) opt.isSelected = false
 			return opt
 		})
@@ -76,6 +76,7 @@
 	}
 
 	function openOptions() {
+		if (open) return
 		inputValue = ''
 		open = true
 	}
@@ -98,7 +99,7 @@
 <div class="container" on:click|stopPropagation={openOptions}>
 	{#if multiple && Array.isArray(value)}
 		<div class="selected">
-			{#each optionsFormated.filter((i) => i.isSelected) as item}
+			{#each optionsFormatted.filter((i) => i.isSelected) as item}
 				<button class="item" on:click={() => removeOption(item)}>
 					<span class="icon">
 						<Close h={10} w={10} weight="bold" />
@@ -122,7 +123,7 @@
 
 	{#if open}
 		<ul class="results" transition:fade>
-			{#each optionsToShow as option}
+			{#each optionsFormatted.filter((i) => i.show) as option}
 				<li class:multiple>
 					{#if multiple}
 						<Checkbox block bind:checked={option.isSelected}>{option.label}</Checkbox>
