@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Search from '$icons/Search.svelte'
 
-	export let label: string = ''
+	export let label: string
 	export let canSearch: boolean = false
 
 	export let clickable: boolean = false
