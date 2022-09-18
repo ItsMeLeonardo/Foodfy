@@ -2,9 +2,7 @@
 	export let size: number | null = null
 	export let w = 20
 	export let h = 20
-	export let weight: 'light' | 'bold' = 'light'
-
-	const strokeWidth = weight === 'light' ? 1.5 : 4
+	export let strokeWidth: number | null = 1.5
 </script>
 
 <svg
