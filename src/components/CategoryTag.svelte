@@ -55,6 +55,7 @@
 			height: 100%;
 			background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
 			width: 35%;
+			min-width: 24px;
 			display: flex;
 			border-radius: 0 100px 100px 0;
 			align-items: center;
