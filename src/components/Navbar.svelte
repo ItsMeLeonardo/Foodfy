@@ -18,7 +18,7 @@
 			</span>
 			<input type="search" placeholder="Search any food by name" />
 		</label>
-		<a href="/" title="Search by ingredient" class="ingredient-search">
+		<a href="/search" title="Search by ingredient">
 			<Button color="light" fullRound>
 				<ReportSearch slot="icon" />
 			</Button>
