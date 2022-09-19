@@ -14,14 +14,21 @@
 	xmlns="http://www.w3.org/2000/svg"
 >
 	<path
-		d="M1.333 14.667h13.334"
+		d="M9.66671 7.1H6.33337"
 		stroke="currentColor"
 		stroke-miterlimit="10"
 		stroke-linecap="round"
 		stroke-linejoin="round"
 	/>
 	<path
-		d="M6.5 2.667v12h3v-12c0-.734-.3-1.334-1.2-1.334h-.6c-.9 0-1.2.6-1.2 1.334Zm-4.5 4v8h2.667v-8c0-.734-.267-1.334-1.067-1.334h-.533c-.8 0-1.067.6-1.067 1.334ZM11.333 10v4.667H14V10c0-.733-.267-1.333-1.067-1.333H12.4c-.8 0-1.067.6-1.067 1.333Z"
+		d="M8 5.47334V8.80667"
+		stroke="currentColor"
+		stroke-miterlimit="10"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+	<path
+		d="M11.2134 1.33333H4.78671C3.36671 1.33333 2.21338 2.49333 2.21338 3.90667V13.3C2.21338 14.5 3.07338 15.0067 4.12671 14.4267L7.38005 12.62C7.72671 12.4267 8.28671 12.4267 8.62671 12.62L11.88 14.4267C12.9334 15.0133 13.7934 14.5067 13.7934 13.3V3.90667C13.7867 2.49333 12.6334 1.33333 11.2134 1.33333Z"
 		stroke="currentColor"
 		stroke-linecap="round"
 		stroke-linejoin="round"
