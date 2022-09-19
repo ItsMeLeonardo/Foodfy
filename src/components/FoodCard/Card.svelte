@@ -26,6 +26,7 @@
 		</button>
 		<img src={picture} alt={title} />
 	</picture>
+
 	<div class="content">
 		<h3 class="title">{title}</h3>
 		<p class="date">{daysjs(date).format('DD MMMM YYYY')}</p>
@@ -58,13 +59,13 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 0.5rem;
-		padding: 0.5rem;
+		/* padding: 0.5rem; */
 		width: 100%;
 		background: var(--light);
 		border-radius: 0.5rem;
 		cursor: pointer;
 
-		transition: box-shadow 0.2s ease-in-out, position 0.2s ease-in-out;
+		transition: box-shadow 0.3s ease-in-out, position 0.2s ease-in-out;
 
 		&:hover {
 			box-shadow: 2px 4px 32px rgba(0, 0, 0, 0.16);
@@ -76,7 +77,7 @@
 		display: flex;
 		width: 100%;
 		height: auto;
-		border-radius: 0.75rem;
+		border-radius: 0.75rem 0.75rem 0 0;
 		position: relative;
 
 		.save {
@@ -130,6 +131,7 @@
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+		padding: 0 0.5rem;
 
 		.title {
 			font-size: 1rem;
@@ -152,13 +154,14 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
+		padding: 0 0.5rem;
 	}
 
 	.options {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0.5rem 0;
+		padding: 0.5rem;
 		width: 100%;
 
 		button {
