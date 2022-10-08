@@ -163,15 +163,16 @@
 		align-items: center;
 		padding: 0.5rem;
 		width: 100%;
-
 		button {
 			display: flex;
+			flex-grow: 1;
+			justify-content: center;
 			align-items: center;
 			gap: 0.25rem;
-			padding: 0.25rem 0.75rem;
+			padding: 0.5rem 0.75rem;
 			border-radius: 0.25rem;
 			border: none;
-			font-size: 10px;
+			font-size: 12px;
 			background: transparent;
 			transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 
