@@ -1,7 +1,7 @@
 ## MAIN FUNCTIONS
 
 - [ ] sharing of recipes
-- [ ] posibility of substituting ingredients (other alternatives)
+- [ ] possibility of substituting ingredients (other alternatives)
 - [ ] function to follow the recipe step by step
 - [ ] should be create a shop list with the ingredients
 
