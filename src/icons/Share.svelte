@@ -8,22 +8,21 @@
 <svg
 	width={size || w}
 	height={size || h}
-	stroke-width={strokeWidth}
 	viewBox="0 0 16 16"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
 >
 	<path
-		d="M7.39999 6.32003L15.89 3.49003C19.7 2.22003 21.77 4.30003 20.51 8.11003L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999 14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23003 7.39999 6.32003Z"
-		stroke="#292D32"
-		stroke-width="1.5"
+		d="M4.93337 4.21334L10.5934 2.32667C13.1334 1.48 14.5134 2.86667 13.6734 5.40667L11.7867 11.0667C10.52 14.8733 8.44004 14.8733 7.17337 11.0667L6.61337 9.38667L4.93337 8.82667C1.1267 7.56 1.1267 5.48667 4.93337 4.21334Z"
+		stroke="currentColor"
+		stroke-width={strokeWidth}
 		stroke-linecap="round"
 		stroke-linejoin="round"
 	/>
 	<path
-		d="M10.11 13.6501L13.69 10.0601"
-		stroke="#292D32"
-		stroke-width="1.5"
+		d="M6.73999 9.1L9.12666 6.70667"
+		stroke="currentColor"
+		stroke-width={strokeWidth}
 		stroke-linecap="round"
 		stroke-linejoin="round"
 	/>
