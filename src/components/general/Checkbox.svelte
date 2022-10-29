@@ -71,6 +71,7 @@
 		align-items: center;
 		gap: 0.5rem;
 		cursor: pointer;
+		width: 100%;
 	}
 	.icon-container {
 		--size: 24px;
