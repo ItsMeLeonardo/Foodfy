@@ -21,6 +21,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 0.5rem;
+		padding-top: var(--nabvar-height);
 
 		button {
 			display: flex;

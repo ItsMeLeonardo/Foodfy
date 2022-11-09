@@ -5,7 +5,6 @@
 	import Profile2User from '$icons/Profile2User.svelte'
 	import Chart from '$icons/Chart.svelte'
 	import Smileys from '$icons/Smileys.svelte'
-	import LampCharge from '$icons/Lamp/Charge.svelte'
 
 	import User from '$components/User/User.svelte'
 	import Button from '$components/general/Button.svelte'

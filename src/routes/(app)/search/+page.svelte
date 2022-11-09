@@ -34,8 +34,9 @@
 
 <style lang="postcss">
 	main {
-		width: 100%;
 		padding: 0 0.5rem;
+		padding-top: calc(var(--nabvar-height) + 1rem);
+		width: 100%;
 
 		h4 {
 			font-size: 1rem;

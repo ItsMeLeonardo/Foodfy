@@ -6,41 +6,49 @@
 	import ReportSearch from '$icons/ReportSearch.svelte'
 </script>
 
-<nav>
-	<a href="/" class="logo">
-		<Logo />
-	</a>
-
-	<div class="search-container">
-		<label>
-			<span class="icon">
-				<Search />
-			</span>
-			<input type="search" placeholder="Search any food by name" />
-		</label>
-		<a href="/search" title="Search by ingredient">
-			<Button color="light" fullRound>
-				<ReportSearch slot="icon" />
-			</Button>
+<div class="navbar">
+	<nav>
+		<a href="/" class="logo">
+			<Logo />
 		</a>
-	</div>
 
-	<picture>
-		<img
-			src="https://i.pinimg.com/236x/29/68/3b/29683b54520b500a531ad18a4534c85e.jpg"
-			alt="Avatar"
-		/>
-	</picture>
-</nav>
+		<div class="search-container">
+			<label>
+				<span class="icon">
+					<Search />
+				</span>
+				<input type="search" placeholder="Search any food by name" />
+			</label>
+			<a href="/search" title="Search by ingredient">
+				<Button color="light" fullRound>
+					<ReportSearch slot="icon" />
+				</Button>
+			</a>
+		</div>
+
+		<picture>
+			<img
+				src="https://i.pinimg.com/236x/29/68/3b/29683b54520b500a531ad18a4534c85e.jpg"
+				alt="Avatar"
+			/>
+		</picture>
+	</nav>
+</div>
 
 <style lang="postcss">
-	nav {
+	.navbar {
 		width: 100%;
-		height: 60px;
+		top: 0;
+		position: absolute;
+	}
+	nav {
+		margin: 0 auto;
+		height: var(--nabvar-height);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 0.5rem;
+		max-width: 960px;
 	}
 
 	.logo {
