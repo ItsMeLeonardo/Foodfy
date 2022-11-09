@@ -9,9 +9,8 @@
 
 - [ ] create a calendar with recipes by each day (morgning - afternoon - night)
 
-
 ## NECESSARY FEATURES
 
 - [ ] login by social media
-- [ ] category by (food type - ingredient - time to eat - country - level - sweet or salty) 
+- [ ] category by (food type - ingredient - time to eat - country - level - sweet or salty)
 - [ ] save favorites
