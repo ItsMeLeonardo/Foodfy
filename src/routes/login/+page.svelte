@@ -9,7 +9,7 @@
 
 <main>
 	<section class="login-container">
-		<h3 class="logo">FOODFY</h3>
+		<a href="/" class="logo">FOODFY</a>
 		<article class="form-container">
 			<header>
 				<h1 class="title">Log in</h1>
@@ -56,6 +56,7 @@
 		font-size: 1.25rem;
 		font-weight: 700;
 		text-align: center;
+		display: block;
 		margin-bottom: 1.5rem;
 	}
 

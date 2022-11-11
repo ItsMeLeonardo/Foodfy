@@ -1,5 +1,7 @@
 <script lang="ts">
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Welcome to Foodfy</h1>
+
+<a href="/login">Go to login</a>
+<a href="/register">Register now</a>
